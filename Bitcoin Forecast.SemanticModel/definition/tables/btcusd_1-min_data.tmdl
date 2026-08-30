@@ -1,0 +1,107 @@
+table btcusd_1-min_data
+	excludeFromModelRefresh
+	lineageTag: c3deb43b-8f20-44d9-8c24-fd61fec597cf
+
+	column Timestamp
+		dataType: int64
+		formatString: 0
+		lineageTag: be39640f-4cfd-40c7-8421-b32098eddc14
+		summarizeBy: sum
+		sourceColumn: Timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column Open
+		dataType: double
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 048fcb86-1a76-4c26-aea4-91201ca79bd1
+		summarizeBy: none
+		sourceColumn: Open
+
+		annotation SummarizationSetBy = User
+
+	column High
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: bed22d05-382e-4318-a115-5b6c1c152981
+		summarizeBy: none
+		sourceColumn: High
+
+		annotation SummarizationSetBy = User
+
+	column Low
+		dataType: double
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: cb89107b-d1db-4d90-a96e-a1b2d3660843
+		summarizeBy: none
+		sourceColumn: Low
+
+		annotation SummarizationSetBy = User
+
+	column Close
+		dataType: double
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 74615ebb-9711-4a81-86f5-47caeadeccde
+		summarizeBy: none
+		sourceColumn: Close
+
+		annotation SummarizationSetBy = User
+
+	column Volume
+		dataType: int64
+		formatString: 0
+		lineageTag: e103de56-090e-494c-a6c2-a72c71ae58f7
+		summarizeBy: sum
+		sourceColumn: Volume
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Converted Timestamp'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 58a4ab51-f48d-4c78-b4fd-f2af3d49f101
+		summarizeBy: none
+		sourceColumn: Converted Timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hour
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0b52f742-1470-455e-940c-1931a4c9ed73
+		summarizeBy: none
+		sourceColumn: Hour
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a1b96ba-46af-4863-9aa9-f4c02c68379c
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition btcusd_1-min_data = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Philip\PBI\Portfolio\Bitcoin\archive\btcusd_1-min_data.csv"),[Delimiter=",", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Timestamp", Int64.Type}, {"Open", type number}, {"High", type number}, {"Low", type number}, {"Close", type number}, {"Volume", Int64.Type}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Converted Timestamp", each #datetime(1970, 1, 1, 0, 0, 0) + #duration(0, 0, 0, [Timestamp])),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Converted Timestamp", type datetime}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type1", "Converted Timestamp", "Converted Timestamp - Copy"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Duplicated Column",{{"Converted Timestamp - Copy", "Hour"}}),
+				    #"Duplicated Column1" = Table.DuplicateColumn(#"Renamed Columns", "Converted Timestamp", "Converted Timestamp - Copy"),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Duplicated Column1",{{"Converted Timestamp - Copy", type date}}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Changed Type2",{{"Converted Timestamp - Copy", "DateKey"}}),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Renamed Columns1",{{"DateKey", Int64.Type}})
+				in
+				    #"Changed Type3"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

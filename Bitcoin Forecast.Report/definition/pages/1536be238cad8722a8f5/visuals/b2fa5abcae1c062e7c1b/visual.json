@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "b2fa5abcae1c062e7c1b",
+  "position": {
+    "x": 80.96082011423978,
+    "y": 10.977738320574884,
+    "z": 3000,
+    "height": 149.5716846178328,
+    "width": 848.03028526440983,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Bitcoin Daily Closing Price Trajectory in the next 12 months",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "36pt",
+                      "color": "#f77c02"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

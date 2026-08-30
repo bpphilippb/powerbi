@@ -1,0 +1,4 @@
+relationship AutoDetected_0a6220c6-b91c-4aac-9689-2a86203115d6
+	fromColumn: btcusd_1-min_data.DateKey
+	toColumn: dimCalendar.DateKey
+
