@@ -1,6 +1,6 @@
 # powerbi
 
-Welcome Bitcoin price prediction using the native Power BI forecasting.
+Welcome to Bitcoin price prediction using the native Power BI forecasting.
 
 A quick look on bitcoin price trajectory. It uses the native Power BI forecasting tool of the line chart visual.
 
