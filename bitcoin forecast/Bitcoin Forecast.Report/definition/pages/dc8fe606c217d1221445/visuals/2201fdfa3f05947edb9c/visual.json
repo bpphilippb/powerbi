@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "c3b3cb2d31386459161c",
+  "name": "2201fdfa3f05947edb9c",
   "position": {
-    "x": 80.96082011423978,
-    "y": 10.977738320574884,
-    "z": 3000,
-    "height": 149.5716846178328,
-    "width": 848.03028526440983,
-    "tabOrder": 1000
+    "x": 58.139699933286963,
+    "y": 683.72287121545469,
+    "z": 4000,
+    "height": 36.04661395863792,
+    "width": 848.83961902598969,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,10 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Every Price of Bitcoin Top and beyond",
+                    "value": "as of August 28 2026",
                     "textStyle": {
                       "fontFamily": "Georgia",
-                      "fontSize": "36pt",
+                      "fontSize": "8pt",
                       "color": "#f77c02"
                     }
                   }

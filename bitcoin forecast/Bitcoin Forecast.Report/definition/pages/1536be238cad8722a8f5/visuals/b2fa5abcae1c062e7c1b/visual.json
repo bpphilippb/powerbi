@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "b2fa5abcae1c062e7c1b",
   "position": {
-    "x": 80.96082011423978,
-    "y": 10.977738320574884,
+    "x": 128.98842526675489,
+    "y": 119.38290423625187,
     "z": 3000,
-    "height": 149.5716846178328,
-    "width": 848.03028526440983,
+    "height": 563.98130621953464,
+    "width": 992.11310072195522,
     "tabOrder": 1000
   },
   "visual": {
@@ -19,12 +19,113 @@
               {
                 "textRuns": [
                   {
-                    "value": "Bitcoin Daily Closing Price Trajectory in the next 12 months",
+                    "value": "Welcome to Bitcoin price prediction using the native Power BI forecasting.",
                     "textStyle": {
                       "fontFamily": "Georgia",
-                      "fontSize": "36pt",
-                      "color": "#f77c02"
+                      "fontSize": "24pt",
+                      "color": "#e66c37"
                     }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "A quick look on bitcoin price trajectory. It uses the native Power BI forecasting tool of the line chart visual.",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "24pt",
+                      "color": "#e66c37"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Dataset: Bitcoin historical data with 1minute interval from 2012 to August 28 2026 Source: ",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "24pt",
+                      "color": "#e66c37"
+                    }
+                  },
+                  {
+                    "value": "https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data?resource=download",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "24pt",
+                      "textDecoration": "underline",
+                      "color": "#e66c37"
+                    },
+                    "url": "https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data?resource=download"
+                  },
+                  {
+                    "value": " Filetype: csv Cleansing / Transformation - Converted Timestamp column to local date format from unix format",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "24pt",
+                      "color": "#e66c37"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Tools/Technique: Power BI, ETL, Dax Query, Star Schema, Data Modelling",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "24pt",
+                      "color": "#e66c37"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Thank you and Enjoy.",
+                    "textStyle": {
+                      "fontFamily": "Georgia",
+                      "fontSize": "24pt",
+                      "color": "#e66c37"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
                   }
                 ]
               }

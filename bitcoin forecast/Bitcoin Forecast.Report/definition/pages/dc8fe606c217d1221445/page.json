@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
-  "name": "1536be238cad8722a8f5",
-  "displayName": "Introduction",
+  "name": "dc8fe606c217d1221445",
+  "displayName": "Daily Closing Price Forecast",
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280,

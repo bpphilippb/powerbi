@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "c3b3cb2d31386459161c",
+  "name": "d2f76e2144136f9871c1",
   "position": {
     "x": 80.96082011423978,
     "y": 10.977738320574884,
-    "z": 3000,
+    "z": 4002,
     "height": 149.5716846178328,
     "width": 848.03028526440983,
-    "tabOrder": 1000
+    "tabOrder": 4002
   },
   "visual": {
     "visualType": "textbox",
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Every Price of Bitcoin Top and beyond",
+                    "value": "Bitcoin Daily Closing Price Trajectory in the next 12 months",
                     "textStyle": {
                       "fontFamily": "Georgia",
                       "fontSize": "36pt",
