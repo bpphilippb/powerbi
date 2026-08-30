@@ -1,0 +1,112 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "364a918e9679fe156368",
+  "position": {
+    "x": 0,
+    "y": 219.5547664114977,
+    "z": 0,
+    "height": 500.85931087622913,
+    "width": 389.70971038040841,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimCalendar"
+                    }
+                  },
+                  "Property": "Year"
+                }
+              },
+              "queryRef": "dimCalendar.Year",
+              "nativeQueryRef": "Year"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure"
+                    }
+                  },
+                  "Property": "Last Available Trading Price"
+                }
+              },
+              "queryRef": "Measure.Last Available Trading Price",
+              "nativeQueryRef": "Last Available Trading Price"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measure"
+                    }
+                  },
+                  "Property": "Yearly Bitcoin Top Direct"
+                }
+              },
+              "queryRef": "Measure.Yearly Bitcoin Top Direct",
+              "nativeQueryRef": "Yearly Bitcoin Top Direct"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b16891ac29bff213cc6e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimCalendar"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "78b30273eab7193f9309",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Measure"
+              }
+            },
+            "Property": "Last Available Trading Price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "98141ebedd191e0ffb12",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Measure"
+              }
+            },
+            "Property": "Yearly Bitcoin Top Direct"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

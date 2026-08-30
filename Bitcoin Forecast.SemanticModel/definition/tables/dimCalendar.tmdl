@@ -1,0 +1,118 @@
+table dimCalendar
+	excludeFromModelRefresh
+	lineageTag: b99e6385-fb1e-42be-bb2b-846ae380aeef
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 8acc3338-4e41-4d83-b099-46cc550b4f47
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 4eb7618e-80ca-4094-96fb-29eee2ab7db8
+		summarizeBy: none
+		sourceColumn: Year
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 89e3dacd-5f86-45b8-87bc-7bc7473a726b
+		summarizeBy: none
+		sourceColumn: Month Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name'
+		dataType: string
+		lineageTag: 0ef95262-c8db-406d-adac-0adeb519a526
+		summarizeBy: none
+		sourceColumn: Month Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		lineageTag: 1047674e-93c9-479e-926c-e9840e2853b2
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Name'
+		dataType: string
+		lineageTag: dddaff90-4468-42ed-8ac1-0e4ecde74b71
+		summarizeBy: none
+		sourceColumn: Day Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 115f9ce8-bda5-4f06-9e94-ebb9fa26de4e
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimCalendar = m
+		mode: import
+		source =
+				let
+				    Source = let
+				    // 1. Reference your source dataset to find the bounds
+				    SourceData = #"btcusd_1-min_data",
+				    DateColumn = #"btcusd_1-min_data"[Converted Timestamp] ,
+				
+				    // 2. Dynamically extract the min and max dates from your dataset
+				    MinDate = List.Min(DateColumn),
+				    MaxDate = List.Max(DateColumn),
+				
+				    // 3. Extract the lowest and highest years
+				    StartYear = Date.Year(MinDate),
+				    EndYear = Date.Year(MaxDate),
+				
+				    // 4. Force full calendar years (Jan 1 of lowest year to Dec 31 of highest year)
+				    CalendarStart = #date(StartYear, 1, 1),
+				    CalendarEnd = #date(EndYear, 12, 31),
+				
+				    // 5. Calculate the total number of days needed
+				    TotalDays = Duration.Days(Duration.From(CalendarEnd - CalendarStart)) + 1,
+				
+				    // 6. Generate the continuous sequence of dates
+				    DateList = List.Dates(CalendarStart, TotalDays, #duration(1, 0, 0, 0)),
+				
+				    // 7. Convert the list into a structured table
+				    #"Converted to Table" = Table.FromList(DateList, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "Date"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Date", type date}}),
+				
+				    // 8. Add useful time-intelligence columns
+				    #"Added Year" = Table.AddColumn(#"Changed Type", "Year", each Date.Year([Date]), Int64.Type),
+				    #"Added Month Number" = Table.AddColumn(#"Added Year", "Month Number", each Date.Month([Date]), Int64.Type),
+				    #"Added Month Name" = Table.AddColumn(#"Added Month Number", "Month Name", each Date.MonthName([Date]), type text),
+				    #"Added Quarter" = Table.AddColumn(#"Added Month Name", "Quarter", each "Q" & Text.From(Date.QuarterOfYear([Date])), type text),
+				    #"Added Day of Week" = Table.AddColumn(#"Added Quarter", "Day Name", each Date.DayOfWeekName([Date]), type text)
+				in
+				    #"Added Day of Week",
+				    #"Duplicated Column" = Table.DuplicateColumn(Source, "Date", "Date - Copy"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Duplicated Column",{{"Date - Copy", "DateKey"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"DateKey", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

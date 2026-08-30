@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "6ccc02eccc7de9e83203",
+  "position": {
+    "x": 150.2608695652174,
+    "y": 37.565217391304351,
+    "z": 1000,
+    "height": 148.86956521739131,
+    "width": 914.08695652173913,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Data Source https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data?resource=download"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "File type .csv"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Cleansing / Transformation - Converted Timestamp column to local date format from unix format"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " "
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
