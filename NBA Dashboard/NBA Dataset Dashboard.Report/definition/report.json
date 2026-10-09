@@ -1,0 +1,109 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY26SU05",
+      "reportVersionAtImport": {
+        "visual": "2.9.0",
+        "report": "3.3.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "advanceCardE03760C5AB684758B56AA29F9E6C257B",
+    "PBI_CV_7B952816_A48F_49B4_9E13_15E3BB2C0337",
+    "ChicletSlicer1448559807354"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY26SU05",
+          "path": "BaseThemes/CY26SU05.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "33398555085965338309824.png",
+          "path": "33398555085965338309824.png",
+          "type": "Image"
+        },
+        {
+          "name": "ball6113481169523796.png",
+          "path": "ball6113481169523796.png",
+          "type": "Image"
+        },
+        {
+          "name": "bblgame7704094075561376.png",
+          "path": "bblgame7704094075561376.png",
+          "type": "Image"
+        },
+        {
+          "name": "Home_icon_orange058633180651528005.png",
+          "path": "Home_icon_orange058633180651528005.png",
+          "type": "Image"
+        },
+        {
+          "name": "light-main9783004409602447.jpg",
+          "path": "light-main9783004409602447.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "score5042806282597847.png",
+          "path": "score5042806282597847.png",
+          "type": "Image"
+        },
+        {
+          "name": "top38745524318987123.png",
+          "path": "top38745524318987123.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "bdc9c6bd4c6cd095e1bf",
+  "position": {
+    "x": 995.74468085106378,
+    "y": 511.76097781801718,
+    "z": 11000,
+    "height": 94.196468990493415,
+    "width": 284.25531914893617
+  },
+  "visualGroup": {
+    "displayName": "ptspergame",
+    "groupMode": "ScaleMode",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total Average of Points per Game'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

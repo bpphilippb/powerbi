@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "928ad9641563f8fd90a8",
+  "position": {
+    "x": 9.73913043478261,
+    "y": 0,
+    "z": 0,
+    "height": 640,
+    "width": 961.39130434782612,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "game"
+                    }
+                  },
+                  "Property": "ast_away"
+                }
+              },
+              "queryRef": "game.ast_away",
+              "nativeQueryRef": "ast_away"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "44726eb16ab037752c6e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "game"
+              }
+            },
+            "Property": "ast_away"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

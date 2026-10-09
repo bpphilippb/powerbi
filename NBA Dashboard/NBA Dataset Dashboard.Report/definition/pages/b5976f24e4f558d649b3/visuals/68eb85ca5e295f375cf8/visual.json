@@ -1,0 +1,30 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "68eb85ca5e295f375cf8",
+  "position": {
+    "x": 995.74468085106378,
+    "y": 403.80523235022946,
+    "z": 10000,
+    "height": 98.723404255319139,
+    "width": 284.25531914893617
+  },
+  "visualGroup": {
+    "displayName": "total games",
+    "groupMode": "ScaleMode",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total number of games played'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

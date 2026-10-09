@@ -1,0 +1,30 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "a0c5e203e55f33346a6b",
+  "position": {
+    "x": 995.74468085106378,
+    "y": 185.53191489361703,
+    "z": 8000,
+    "height": 98.723404255319139,
+    "width": 284.25531914893617
+  },
+  "visualGroup": {
+    "displayName": "total point",
+    "groupMode": "ScaleMode",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total number of seasons'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

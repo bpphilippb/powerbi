@@ -1,0 +1,30 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "e49514ca3114ef2f846f",
+  "position": {
+    "x": 995.74468085106378,
+    "y": 295.33725667722973,
+    "z": 9000,
+    "height": 98.723404255319139,
+    "width": 284.25531914893617
+  },
+  "visualGroup": {
+    "displayName": "total players",
+    "groupMode": "ScaleMode",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total players in the league'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

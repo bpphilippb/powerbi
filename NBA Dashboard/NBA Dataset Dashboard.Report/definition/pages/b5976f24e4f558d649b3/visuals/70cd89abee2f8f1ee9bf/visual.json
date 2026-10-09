@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "70cd89abee2f8f1ee9bf",
+  "position": {
+    "x": 354.04255319148933,
+    "y": 6.8085106382978724,
+    "z": 13001,
+    "height": 86.808510638297875,
+    "width": 738.72340425531911,
+    "tabOrder": 9012
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Has NBA scoring increased substantially over time as perimeter shooting has become increasingly important? Is three-point shooting percentage more efficient than two-point shooting percentage to score more, and how has this impacted NBA scoring over time?",
+                    "textStyle": {
+                      "fontFamily": "DIN Light",
+                      "fontSize": "14pt",
+                      "color": "#3b82f6"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
